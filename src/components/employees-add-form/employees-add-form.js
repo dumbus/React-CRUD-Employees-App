@@ -21,6 +21,7 @@ class EmployeesAddForm extends Component {
     const { name, salary } = this.state;
 
     e.preventDefault();
+    if (name.length < 3 || !salary) return;
     this.props.onAdd(name, salary);
     this.setState({
       name: '',
